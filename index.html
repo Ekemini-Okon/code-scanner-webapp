@@ -2,24 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Live QR & Barcode Scanner</title>
+  <title>NeoScan | QR & Code Scanner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/html5-qrcode"></script>
 </head>
 <body>
 
-  <h2>Live QR & Barcode Scanner</h2>
+  <div class="container">
+    <h1>NeoScan</h1>
+    <p class="subtitle">Scan QR & Barcodes — Live or From Image</p>
 
-  <video id="video" autoplay playsinline></video>
+    <div class="scanner-box" id="reader"></div>
 
-  <div class="result">
-    <strong>Scanned Result:</strong>
-    <p id="output">Waiting for scan...</p>
+    <button id="startBtn">Start Camera Scan</button>
+
+    <div class="upload-box">
+      <label for="fileInput" class="upload-btn">
+        Upload Code Image
+      </label>
+      <input type="file" id="fileInput" accept="image/*">
+    </div>
+
+    <div class="result-box">
+      <h3>Decoded Result</h3>
+      <p id="output">Waiting for scan...</p>
+    </div>
   </div>
 
-  <button id="start">Start Camera</button>
-
-  <script src="https://unpkg.com/html5-qrcode"></script>
   <script src="script.js"></script>
 </body>
 </html>
